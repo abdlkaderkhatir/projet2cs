@@ -15,8 +15,8 @@ const App = () => {
         <Route path="/forgot-password" exact element={<ForgotPasswordPage />} /> */}
         
         {/* ADMIN */}
-       <Route path="/" exact element={<DoctorHomepage />} />
-       <Route path="/admin" exact element={<AdminHomePage />} />
+       <Route path="/doctor" exact element={<DoctorHomepage />} />
+       <Route path="/" exact element={<AdminHomePage />} />
       </Routes>
     </BrowserRouter>
   );

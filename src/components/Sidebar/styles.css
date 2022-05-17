@@ -1,6 +1,4 @@
-li {
-	list-style-type: none;
-}
+
 
 .customBrand1 {
 	font-family: "Roboto";
@@ -13,29 +11,85 @@ li {
 	color: #336cfb;
 }
 
-.customBrand2 {
-	font-family: "Roboto";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	letter-spacing: 0.5px;
-	margin: 10px 24px;
+.link-list{
+	list-style: none;
+    padding: 5px;
+	
+}
+.sidebarListItem {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color:rgb(180, 253, 255)
+    
+  }
 
-	color: #52575c;
+  .sidebarListItem.active,
+  .sidebarListItem:hover {
+    color: white;
+  }
+  
+  .sidebarIcon{
+      margin-right: 5px;
+      font-size: 20px !important;
+  }
+
+.customBrand2 {
+	font-size: 13px;
+    color: white;
 }
 
 .active-link {
-	color: #336cfb;
+	font-size: 13px;
+    color: white;
 }
 
 .sidebar-container {
-	position: fixed;
-	width: 20%;
-	left: 0;
-	overflow-x: hidden;
-	overflow-y: auto;
-	height: 100%;
+    flex: 1;
+	width: 300px;
+    height: calc(90vh - 50px);
+    background-color: #62AEC5;
+    position: sticky;
+    top: 50px;
+    border-radius: 50px 0px 0px 50px;
+	padding: 30px;
 }
+
+.spacer{
+	display: block;
+	width: 50px;
+}
+.logo{
+    font-weight: bold;
+    display: block;
+    width: 5px;
+    height: auto;
+    color: white;
+    margin: 50px;
+    padding-top: 10px;
+}
+
+
+.sidebarWrapper {
+    padding: 20px;
+	color:rgb(180, 253, 255);
+    position: relative;
+  }
+
+  .sidebarWrapper::after{
+    box-shadow: 25px 25px 25px 25px rgba(98, 174, 197, 0.5);
+    content: '';
+    border-radius: 50px 0px 0px 50px;
+    display: block;
+    height: calc(90vh - 50px);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  
+  }
 
 .navbar-collapse {
 	background: transparent;
@@ -71,6 +125,3 @@ li {
   margin-top: 4px;
 } */
 
-.link-list {
-	width: 100%;
-}

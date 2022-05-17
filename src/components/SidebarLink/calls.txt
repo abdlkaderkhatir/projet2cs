@@ -20,5 +20,11 @@
             path: "/profil",
             icon: "fa-solid fa-user-doctor",
           },
+             {
+            id: 4,
+            text: "charts",
+            path: "/charts",
+            icon: "fa-solid fa-user-doctor",
+          },
         ]}
 />

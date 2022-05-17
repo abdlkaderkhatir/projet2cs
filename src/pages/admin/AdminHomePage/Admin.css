@@ -1,0 +1,43 @@
+body{
+    font-family: 'Asap', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.page-container{    
+    display: flex;
+    margin: 20px;
+    margin-top: 50px;
+}
+.others{
+    flex:4;
+}
+
+.calendar{
+    border-style: solid;
+    border-color: #62AEC5;
+    border-width: 1px;
+    border-radius: 0px 50px 50px 00px;
+    margin-left: 20px;
+}
+.Kalend__CalendarDesktopNavigation__container{
+    background-color: #62AEC5;
+    border-radius: 0px 50px 0px 00px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.Kalend__text{
+ 
+    font-weight: lighter;
+}
+.Kalend__HeaderCalendarTitle{
+    color: white;
+}
+.Kalend__ButtonBase-border{
+    color: white;
+}
+.Kalend__header_calendar_button-text{
+    color:white;
+}
+.Kalend__text .Kalend__header_calendar_button-text-selected{
+    color:#F678A7
+}

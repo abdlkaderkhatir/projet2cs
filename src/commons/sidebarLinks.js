@@ -39,6 +39,13 @@ export const getSidebarLinks = (role, activeId) => {
         icon: <FaUser />,
         isActive: activeId === 4 ? true : false,
       },
+     {
+        id: 5,
+        text: "charts",
+        path: "/charts",
+        icon: <FaUser />,
+        isActive: activeId === 5 ? true : false,
+      },
     ];
   }
 };

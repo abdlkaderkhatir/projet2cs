@@ -1,11 +1,13 @@
 import React from "react";
 import SidebarLink from "../SidebarLink/SidebarLink";
 import "./styles.css";
+import logo from '../../assets/CAC.png';
 
 const Sidebar = ({ links }) => {
 	return (
 		<div>
-			<div className="sidebar-container container-flex navbar-expand-sm navbar-light">
+			<div className="sidebar-container">
+				<div className="sidebareWrapper">
 				{/* <button
 					className="navbar-toggler bg-white"
 					type="button"
@@ -17,18 +19,17 @@ const Sidebar = ({ links }) => {
 				>
 					<span className="navbar-toggler-icon"></span>
 				</button> */}
-				<div
-					className="collapse navbar-collapse smaller-container bg-white .d-none .d-sm-block .d-md-none"
-					id="navbarSupportedContent"
-				>
-					<div className="customBrand1">CAC Dashboard</div>
+				 <span className="logo"><img src={logo} width="150px" alt="logo"/></span>
+				<div id="navbarSupportedContent">
+					<span className="spacer"/>
 
-					<div className="customBrand2">CAC system</div>
+					
 					<ul className="link-list">
 						{links.map((link) => {
-							return <SidebarLink link={link} key={link.id} />;
+							return <SidebarLink link={link} key={link.id} className="sidebarListItem" />;
 						})}
 					</ul>
+				</div>
 				</div>
 			</div>
 		</div>

@@ -22,10 +22,10 @@ const CustomCalendar = ({
   }
 
   return (
-    <Kalend
+    <Kalend 
       style={{
-        primaryColor: "#336cfb",
-        baseColor: "#3d3c3c",
+        primaryColor: "#F678A7",
+        baseColor: "#F678A7",
         inverseBaseColor: "#f2ecec",
       }}
       onEventClick={onEventClick}
@@ -39,6 +39,7 @@ const CustomCalendar = ({
       weekDayStart={"Monday"}
       calendarIDsHidden={["work"]}
       language={"en"}
+      
     />
   );
 };
