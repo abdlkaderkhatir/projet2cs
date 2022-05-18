@@ -5,7 +5,7 @@ import {getSidebarLinks } from "../../../commons/sidebarLinks";
 import Sidebar from "../../../components/Sidebar/Sidebar"
 import { useDispatch, useSelector } from 'react-redux';
 import { createOperation } from '../../../redux/actions/operations';
-
+import './Admin.css'
 export default function AdminHomePage() {
   const dispatch = useDispatch();
     const [date, setDate] = useState(new Date());
@@ -86,13 +86,13 @@ export default function AdminHomePage() {
     };
   
   return (
-    <div>
-          <div className="page-container">
-       <div>
+    
+    <div className="page-container">
+       
         <Sidebar  links={getSidebarLinks("admin", 1)} />
-      </div> 
-     
-      <div style={{ marginLeft: "15%", height: "100vh" }}>
+       
+      <div className='others'>
+      <div className="calendar" style={{ height: "84vh", width:"80vw" }}>
         <CustomCalendar
           events={events}
           setDate={setDate}
@@ -116,5 +116,6 @@ export default function AdminHomePage() {
    
     </div>
     </div>
+    
   )
 }
