@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import Header from "../../../components/Header/Header";
 import GeneralStats from "../../../components/GeneralStats/GeneralStats";
@@ -12,15 +12,15 @@ import { GiMedicalDrip, GiMedicalPack } from "react-icons/gi";
 // import { resetUser } from "../../../redux/actions/auth";
 import { useNavigate } from "react-router";
 import { getSidebarLinks } from "../../../commons/sidebarLinks";
+import "./style.css"
 
 const DoctorHomepage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const appointments = useSelector((state) => state.operationsReducer);
-
- 
-
+  const [val, setVal] = useState("All");
+  const [str, setStr] = useState();
   const headerProps = {
     // avatarUrl: "nikolaSlika 1.jpg",
     welcomeMsg: "Dobro jutro",
@@ -46,6 +46,18 @@ const DoctorHomepage = () => {
     },
   ];
 
+  const filteredElements = appointments.filter(e => {
+    if (val === "All") {
+      return e.operationType.includes(str);
+    } else if (val === "operationType") {
+      return e.operationType.includes(str);
+    } 
+    else if (val === "salle") {
+      return e.salle.toString().includes(str);
+    }
+  });
+
+
   return (
     <>
       <div className="sidebar-link-container">
@@ -62,7 +74,25 @@ const DoctorHomepage = () => {
         />
 
         <div className="components">
-          <GeneralStats
+
+          <input onChange={(e) => {
+            setStr(e.target.value)
+            console.log(filteredElements);
+          }} />
+          <select
+            className="filter"
+            aria-label="select type of medical examination"
+            onChange={(e) => setVal(e.target.value)}
+          >
+            <option value={"All"}>All</option>
+            <option value={"operationType"}>type operation</option>
+            <option value={"salle"}> salle </option>
+          </select>
+
+         {/* <div>{val}</div> */}
+         <div>{filteredElements.map(e=><li>{e.operationType}</li>)}</div>
+
+          {/* <GeneralStats
             image={generalStatsProps[0].image}
             text={generalStatsProps[0].text}
             number={generalStatsProps[0].number}
@@ -76,9 +106,11 @@ const DoctorHomepage = () => {
             image={generalStatsProps[2].image}
             text={generalStatsProps[2].text}
             number={generalStatsProps[2].number}
-          />
+          /> */}
         </div>
-        {appointments.length  > 0 && (
+
+
+        {appointments.length > 0 && (
           <ScheduledAppointments appointments={appointments} />
         )}
       </div>

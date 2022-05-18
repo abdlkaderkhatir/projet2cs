@@ -16,9 +16,9 @@
 }
 
 .new-appointment-header {
-  background-color: #e9f0ff;
+  background-color: #51e1da;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
@@ -33,12 +33,14 @@
 }
 
 .new-appointment-doctor {
+  margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .doctor-container {
+  margin-left: 20px;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -114,14 +116,14 @@
 }
 
 .dropdown1 {
-  display: flex;
+  /* display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
   margin: 25px 0 25px;
 }
 
-.dropdown2 {
+/* .dropdown2 {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -135,16 +137,19 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 25px 0 25px;
-}
+} */
 
 .header-paragraph {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  font-family: "Roboto";
+  font-style: italic;
+  /* font-weight: 800; */
+  font-size: 24px;
   line-height: 26px;
   letter-spacing: 0.2px;
-  color: #25282b;
+  color: #FFF;
   padding: 20px 0 20px;
 }
 
@@ -184,11 +189,12 @@
 .my-close-btn {
   padding: 10px 20px;
   margin-right: 20px;
-  background: #e74f48;
+  color: red;
+  background: transparent;
   border-radius: 5px;
   text-align: center;
-  outline: none;
-  border: none;
+  outline:none ;
+  border: 1px solid red;
 }
 
 .my-save-btn {
@@ -199,3 +205,4 @@
   outline: none;
   border: none;
 }
+

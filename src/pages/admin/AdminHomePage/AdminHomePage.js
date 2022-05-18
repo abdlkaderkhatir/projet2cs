@@ -11,9 +11,9 @@ export default function AdminHomePage() {
     const [date, setDate] = useState(new Date());
     const [newAppointmentVisible, setNewAppointmentVisible] = useState(false);
     const [deleteAppointmentVisible, setDeleteAppointmentVisible] =useState(false);
-    // const [selectedDoctor, setSelectedDoctor] = useState({});
+    const [selectedDoctors, setSelectedDoctors] = useState([]);
+    // const [selectedA]
     const operations = useSelector((state) => state.operationsReducer);
-    console.log(operations);
     const [appointmentIdDelete, setAppointmentIdDelete] = useState(1);
     const [events, setEvents] = useState([
       // {
@@ -53,13 +53,12 @@ export default function AdminHomePage() {
   
    
   
-    const createNewAppointment = (patientId, date, examinationType, note) => {
+    const createNewAppointment = (patientId, date,salle,operationType,doctors,Anistisistes,cordinateur) => {
       const newEvent = {
         id: events.length + 1,
         startAt: date.toISOString(),
         endAt: date.addHours(1).toISOString(),
-        summary: note,
-        
+        summary: "operation" + events.length,  
       };
       setNewAppointmentVisible(false);
       // setEvents([...events, newEvent]);
@@ -68,7 +67,13 @@ export default function AdminHomePage() {
           id: events.length + 1,
           startAt: date.toISOString(),
           endAt: date.addHours(1).toISOString(),
-          summary:note + examinationType,
+          patientId:patientId,
+          salle:salle,
+          operationType:operationType,
+          doctors:doctors,
+          Anistisistes:Anistisistes,
+          cordinateur:cordinateur,
+          summary:"operation " + events.length,
           color: "#336cfb",
           calendarID: "work",
         })

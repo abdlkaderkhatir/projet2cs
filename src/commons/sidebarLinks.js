@@ -26,10 +26,10 @@ export const getSidebarLinks = (role, activeId) => {
       },
       {
         id: 3,
-        text: "Patients",
-        path: "/admin/registerpatient",
+        text: "Statistique",
+        path: "/admin/statistique",
         icon: <FaUserInjured />,
-        dividerAfter: true,
+        // dividerAfter: true,
         isActive: activeId === 3 ? true : false,
       },
       {

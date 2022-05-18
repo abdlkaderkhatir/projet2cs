@@ -4,9 +4,11 @@ import { format } from "date-fns";
 import { useDispatch } from "react-redux";
 
 
+
 const SingleAppointment = ({ appointment }) => {
   const dispatch = useDispatch();
-  const { startAt, summary, id } = appointment;
+  console.log(appointment);
+  const {id,startAt,patientId, date,salle,operationType,doctors,Anistisistes,cordinateur} = appointment;
 
   let age = format(new Date(), "yyyy") - format(2000, "yyyy");
   let appointTime = format(new Date(startAt), "HH:mm");
@@ -16,26 +18,25 @@ const SingleAppointment = ({ appointment }) => {
  
 
   return (
-    <div
-      key={id}
-    >
-      <div className="d-flex flex-row align-items-center ">
+    <div key={id} >
+      <div className="d-flex">
         <div className="appTime">
           {appointTime} {appointDate}
         </div>
         <div className="customContainer">
-          <div className="d-flex flex-row justify-content-around appointment">
+          <div className="flex-row">
             <span className="text-dark text1">
-              khatir
-        
+              khatir Abdelkader
             </span>
             <span className="text2">
-              Starost: 22
-              
-               , Pol: Homme
-             
+                age :22ans
             </span>
           </div>
+
+        </div>
+        <div className="details" >
+         <div className="text3"> operation details :</div>  
+          <p> </p>
         </div>
       </div>
     </div>

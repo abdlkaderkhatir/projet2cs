@@ -18,6 +18,7 @@ import {
   export const createOperation = (formData) => async (dispatch) => {
     try {
     //   const { data } = await api.createOperation(formData);
+    console.log(formData);
       dispatch({ type: CREATE_OPERATION, formData });
     } catch (error) {
       console.log(error);
