@@ -89,10 +89,10 @@ export default function AdminHomePage() {
     
     <div className="page-container">
        
-        <Sidebar  links={getSidebarLinks("admin", 1)} />
+      <Sidebar  links={getSidebarLinks("admin", 1)} />
        
       <div className='others'>
-      <div className="calendar" style={{ height: "84vh", width:"80vw" }}>
+      <div className="calendar" style={{ height: "100%", width:"75vw" }}>
         <CustomCalendar
           events={events}
           setDate={setDate}

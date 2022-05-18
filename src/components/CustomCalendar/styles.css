@@ -9,7 +9,7 @@
 }
 
  .Kalend__header_calendar_button-text-selected, .Kalend__header_calendar_button-text-selected-dark{
-    color: #336cfb !important;
+    color: #333 !important;
 }
 Kalend{
     margin: 0;

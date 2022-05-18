@@ -20,7 +20,7 @@ const DoctorHomepage = () => {
 
   const appointments = useSelector((state) => state.operationsReducer);
   const [val, setVal] = useState("All");
-  const [str, setStr] = useState();
+  const [str, setStr] = useState('');
   const headerProps = {
     // avatarUrl: "nikolaSlika 1.jpg",
     welcomeMsg: "Dobro jutro",
@@ -57,13 +57,20 @@ const DoctorHomepage = () => {
     }
   });
 
+  console.log(filteredElements);
 
   return (
     <>
+      <div className="page-container">
+
       <div className="sidebar-link-container">
         <Sidebar links={getSidebarLinks("admin", 2)} />
       </div>
-      <div style={{ marginLeft: "15%" }}>
+
+      <div 
+      className="others"
+      // style={{ marginLeft: "15%" }}
+      >
         <Header
           avatarUrl={headerProps.avatarUrl}
           welcomeMsg={headerProps.welcomeMsg}
@@ -77,7 +84,6 @@ const DoctorHomepage = () => {
 
           <input onChange={(e) => {
             setStr(e.target.value)
-            console.log(filteredElements);
           }} />
           <select
             className="filter"
@@ -89,8 +95,8 @@ const DoctorHomepage = () => {
             <option value={"salle"}> salle </option>
           </select>
 
-         {/* <div>{val}</div> */}
-         <div>{filteredElements.map(e=><li>{e.operationType}</li>)}</div>
+         {/* <div>{val}</div>
+         <div>{filteredElements.map(e=><li>{e.operationType}</li>)}</div> */}
 
           {/* <GeneralStats
             image={generalStatsProps[0].image}
@@ -106,13 +112,14 @@ const DoctorHomepage = () => {
             image={generalStatsProps[2].image}
             text={generalStatsProps[2].text}
             number={generalStatsProps[2].number}
-          /> */}
+          />  */}
         </div>
 
 
         {appointments.length > 0 && (
-          <ScheduledAppointments appointments={appointments} />
+          <ScheduledAppointments appointments={filteredElements} />
         )}
+      </div>
       </div>
     </>
   );

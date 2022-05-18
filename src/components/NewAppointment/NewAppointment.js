@@ -63,6 +63,8 @@ const NewAppointment = (props) => {
   }
 
   const dateString = date.toLocaleString();
+  console.log(date.toLocaleString());
+  console.log(date.toISOString());
   return (
     <div className="new-appointment-container">
       <div className="new-appointment-header">

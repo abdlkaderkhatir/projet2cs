@@ -92,10 +92,14 @@ export default function StatisiquePage() {
 
     return (
         <>
+          <div className="page-container"> 
             <div className="sidebar-link-container">
                 <Sidebar links={getSidebarLinks("admin", 3)} />
             </div>
-            <div style={{ marginLeft: "15%" }}>
+            <div
+            className="others"
+            //  style={{ marginLeft: "15%" }}
+             >
                 <Header
                     avatarUrl={headerProps.avatarUrl}
                     welcomeMsg={headerProps.welcomeMsg}
@@ -151,6 +155,7 @@ export default function StatisiquePage() {
 
 
             </div>
+          </div>
 
         </>
     )
